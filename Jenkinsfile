@@ -12,6 +12,13 @@ pipeline {
           git 'https://github.com/kmayer10/maven-sample-project.git'
          }
       }
+      stage ('build with maven){
+     steps{
+        withMaven {
+            sh 'mvn clean package'
+        }
+       }
+     }
    }
 }
       
